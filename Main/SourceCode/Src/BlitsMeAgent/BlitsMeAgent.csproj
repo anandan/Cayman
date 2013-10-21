@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{211D2399-36E1-4E1E-BFC5-FE76F7A8EFCC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BlitsMe.Agent</RootNamespace>
+    <AssemblyName>BlitsMe.Agent</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\icon-main.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BlitsMe.Agent.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\BlitsMe.Agent.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\BlitsMe.Agent.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\BlitsMe.Agent.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\BlitsMe.Agent.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BlitsMeCommon\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.0.10.1.1\lib\net40\MahApps.Metro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>..\library\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Effects">
+      <HintPath>..\library\Microsoft.Expression.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.0.10.1.1\lib\net40\System.Windows.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Activity\InteractionActivity.cs" />
+    <Compile Include="Components\Alert\Alert.cs" />
+    <Compile Include="Components\DataSubmitErrorArgs.cs" />
+    <Compile Include="Components\Engagement.cs" />
+    <Compile Include="Components\EngagementActivity.cs" />
+    <Compile Include="Components\Functions\API\FunctionImpl.cs" />
+    <Compile Include="Components\Functions\API\IFunction.cs" />
+    <Compile Include="Components\Functions\Chat\ChatElement.cs" />
+    <Compile Include="Components\Functions\Chat\Conversation.cs" />
+    <Compile Include="Components\Functions\Chat\Function.cs" />
+    <Compile Include="Components\Functions\Chat\Processors\ChatMessageProcessor.cs" />
+    <Compile Include="Components\Functions\Chat\ServiceCompleteChatElement.cs" />
+    <Compile Include="Components\Functions\FileSend\FileSendClient.cs" />
+    <Compile Include="Components\Functions\FileSend\FileSendInfo.cs" />
+    <Compile Include="Components\Functions\FileSend\FileSendListener.cs" />
+    <Compile Include="Components\Functions\FileSend\Function.cs" />
+    <Compile Include="Components\Functions\FileSend\Notification\FileReceivedNotification.cs" />
+    <Compile Include="Components\Functions\FileSend\Notification\FileSendProgressNotification.cs" />
+    <Compile Include="Components\Functions\FileSend\Processors\FileSendRequestProcessor.cs" />
+    <Compile Include="Components\Functions\FileSend\Processors\FileSendRequestResponseProcessor.cs" />
+    <Compile Include="Components\Functions\RemoteDesktop\Function.cs" />
+    <Compile Include="Components\Functions\FileSend\Notification\FileSendEventArgs.cs" />
+    <Compile Include="Components\Functions\FileSend\Notification\FileSendRequestNotification.cs" />
+    <Compile Include="Components\Functions\RemoteDesktop\Notification\RDPNotification.cs" />
+    <Compile Include="Components\Functions\RemoteDesktop\Processors\RDPRequestProcessor.cs" />
+    <Compile Include="Components\Functions\RemoteDesktop\Processors\RDPRequestResponseProcessor.cs" />
+    <Compile Include="Components\IdleState.cs" />
+    <Compile Include="Components\Interaction.cs" />
+    <Compile Include="Components\Interactions.cs" />
+    <Compile Include="Components\Notification\AnswerTrueFalseCommand.cs" />
+    <Compile Include="Components\Notification\CancellableNotification.cs" />
+    <Compile Include="Components\Notification\CancelCommand.cs" />
+    <Compile Include="Components\Notification\InfoNotification.cs" />
+    <Compile Include="Components\LoginDetails.cs" />
+    <Compile Include="Components\Notification\Notification.cs" />
+    <Compile Include="Components\Notification\AddBuddyNotification.cs" />
+    <Compile Include="Components\Notification\TrueFalseNotification.cs" />
+    <Compile Include="Components\Person\Attendance.cs" />
+    <Compile Include="Components\Person\Person.cs" />
+    <Compile Include="Components\Person\Presence\IPresence.cs" />
+    <Compile Include="Components\Person\Presence\MultiPresence.cs" />
+    <Compile Include="Components\Person\Presence\Presence.cs" />
+    <Compile Include="Components\Processors\ListenHandshakeProcessor.cs" />
+    <Compile Include="Components\Processors\InitUDPConnectionProcessor.cs" />
+    <Compile Include="Components\Processors\SubscribeProcessor.cs" />
+    <Compile Include="Components\Processors\UserToUserProcessor.cs" />
+    <Compile Include="Components\Processors\PresenceChangeProcessor.cs" />
+    <Compile Include="Components\Rating.cs" />
+    <Compile Include="Components\Schedule\CheckServiceTask.cs" />
+    <Compile Include="Components\Schedule\CheckUpgradeTask.cs" />
+    <Compile Include="Components\Schedule\DetectIdleTask.cs" />
+    <Compile Include="Components\Schedule\IScheduledTask.cs" />
+    <Compile Include="Components\Search\SearchResult.cs" />
+    <Compile Include="Exceptions\LoginException.cs" />
+    <Compile Include="Exceptions\RDPSessionFailedException.cs" />
+    <Compile Include="Components\Functions\RemoteDesktop\Client.cs" />
+    <Compile Include="Components\Functions\RemoteDesktop\Server.cs" />
+    <Compile Include="DispatchingCollection.cs" />
+    <Compile Include="Exceptions\SignUpException.cs" />
+    <Compile Include="FlashWindowHelper.cs" />
+    <Compile Include="Managers\ConnectionManager.cs" />
+    <Compile Include="Managers\CurrentUserManager.cs" />
+    <Compile Include="Managers\EngagementManager.cs" />
+    <Compile Include="Components\Login\LoginEventArgs.cs" />
+    <Compile Include="Managers\LoginManager.cs" />
+    <Compile Include="Managers\ScheduleManager.cs" />
+    <Compile Include="Managers\NotificationManager.cs" />
+    <Compile Include="Managers\P2PManager.cs" />
+    <Compile Include="Managers\RequestManager.cs" />
+    <Compile Include="Managers\SearchManager.cs" />
+    <Compile Include="Managers\UIManager.cs" />
+    <Compile Include="Misc\BLMRegistry.cs" />
+    <Compile Include="Managers\RosterManager.cs" />
+    <Compile Include="OSUtils.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SystemTray.cs" />
+    <Compile Include="UI\WPF\API\IDashboardContentControl.cs" />
+    <Compile Include="UI\WPF\AvatarImageWindow.xaml.cs">
+      <DependentUpon>AvatarImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\ConfirmPasswordWindow.xaml.cs">
+      <DependentUpon>ConfirmPasswordWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\ContactInfoWindow.xaml.cs">
+      <DependentUpon>ContactInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <None Include="Resources\Entypo.ttf" />
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Skins\Skin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\AvatarImageWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\ConfirmPasswordWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\ContactInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\ElevateApprovalWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Engage\ChatWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Engage\EngagementWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Engage\RatingControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Engage\UserImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WPF\Engage\UserImageAddBuddy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WPF\Engage\UserImageOthers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WPF\LoginControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Roster\RosterElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Search\SearchResultControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WPF\Search\SearchWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\SignUpControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Style\EngagementStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Style\NotificationStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Style\RatingStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Style\RosterStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Style\SearchStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Style\Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Dashboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="UI\WPF\ElevateApprovalWindow.xaml.cs">
+      <DependentUpon>ElevateApprovalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Engage\ChatWindow.xaml.cs">
+      <DependentUpon>ChatWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Engage\EngagementWindow.xaml.cs">
+      <DependentUpon>EngagementWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Engage\EngagementWindowList.cs" />
+    <Compile Include="UI\WPF\Engage\RatingControl.xaml.cs">
+      <DependentUpon>RatingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Engage\UserImage.xaml.cs">
+      <DependentUpon>UserImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Engage\UserImageAddBuddy.xaml.cs">
+      <DependentUpon>UserImageAddBuddy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Engage\UserImageOthers.xaml.cs">
+      <DependentUpon>UserImageOthers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\LoginControl.xaml.cs">
+      <DependentUpon>LoginControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Roster\ActiveRosterList.cs" />
+    <Compile Include="UI\WPF\Roster\SearchRosterList.cs" />
+    <Compile Include="UI\WPF\Roster\RosterList.cs" />
+    <Compile Include="UI\WPF\Search\UserOtherImageList.cs" />
+    <Compile Include="UI\WPF\SignUpControl.xaml.cs">
+      <DependentUpon>SignUpControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\UpdateNotification.xaml.cs">
+      <DependentUpon>UpdateNotification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\UserInfoWindow.xaml.cs">
+      <DependentUpon>UserInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Utils\ImageStreamReader.cs" />
+    <Compile Include="UI\WPF\Utils\InputValidator.cs" />
+    <Compile Include="UI\WPF\Utils\RectConverter.cs" />
+    <Compile Include="UI\WPF\Utils\RelativeMessageTimeConverter.cs" />
+    <Compile Include="UI\WPF\Roster\MainRosterList.cs" />
+    <Compile Include="UI\WPF\Utils\StarRatingConverter.cs" />
+    <Compile Include="UI\WPF\Search\SearchResultControl.xaml.cs">
+      <DependentUpon>SearchResultControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Search\SearchResultControlList.cs" />
+    <Compile Include="UI\WPF\Search\SearchWindow.xaml.cs">
+      <DependentUpon>SearchWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WPF\Utils\ObservableListMirror.cs" />
+    <Compile Include="UI\WPF\Roster\RosterElement.xaml.cs">
+      <DependentUpon>RosterElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="BlitsMeClientAppContext.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Page Include="UI\WPF\Style\ChatStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\Style\Theme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\UpdateNotification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\WPF\UserInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <AvailableItemName Include="RootContent">
+      <Visible>false</Visible>
+    </AvailableItemName>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <EmbeddedResource Include="env\Debug\cacert.pem">
+      <LogicalName>BlitsMe.Agent.cacert.pem</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="env\Debug\log4net.xml">
+      <LogicalName>BlitsMe.Agent.log4net.xml</LogicalName>
+    </EmbeddedResource>
+    <RootContent Include="env\Debug\bmss.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </RootContent>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
+    <EmbeddedResource Include="env\Release\log4net.xml">
+      <LogicalName>BlitsMe.Agent.log4net.xml</LogicalName>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="env\Release\cacert.pem">
+      <LogicalName>BlitsMe.Agent.cacert.pem</LogicalName>
+    </EmbeddedResource>
+    <None Include="env\Release\bmss.exe.broken" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="app.config" />
+    <Resource Include="Icons\icon-pulse-0.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-10.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-100.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-20.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-30.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-40.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-50.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-60.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-70.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-80.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\icon-pulse-90.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UI\WPF\Images\1364864637_alert.png" />
+    <Resource Include="UI\WPF\Images\1375404724_tune.png" />
+    <Resource Include="UI\WPF\Images\1375406488_Cute Ball - Search.png" />
+    <Resource Include="UI\WPF\Images\close.png" />
+    <Resource Include="UI\WPF\Images\fileclose.png" />
+    <Resource Include="UI\WPF\Images\floppy_unmount.png" />
+    <Resource Include="UI\WPF\Images\stock_insert_image.png" />
+    <Resource Include="UI\WPF\Images\folder_image.png" />
+    <Resource Include="UI\WPF\Images\webcam.png" />
+    <Resource Include="UI\WPF\Images\exit.png" />
+    <Resource Include="UI\WPF\Images\Logoff.png" />
+    <Resource Include="UI\WPF\Images\BLITSME.png" />
+    <Resource Include="UI\WPF\Images\Check.png" />
+    <Resource Include="UI\WPF\Images\facebook-like.png" />
+    <Resource Include="UI\WPF\Images\tweet.png" />
+    <Resource Include="UI\WPF\Images\silhoette.png" />
+    <Resource Include="UI\WPF\Images\Upload.png" />
+    <Resource Include="UI\WPF\Images\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlitsMeCloudClient\BlitsMeCloudClient.csproj">
+      <Project>{751a6516-1fe8-47f4-a754-8aa5594ffb11}</Project>
+      <Name>BlitsMeCloudClient</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BlitsMeCommon\BlitsMeCommon.csproj">
+      <Project>{1b355f1c-9d50-4bab-8ceb-e6ca72e6de69}</Project>
+      <Name>BlitsMeCommon</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BlitsMeP2PConnection\BlitsMeP2PConnection.csproj">
+      <Project>{c8080119-3305-43b5-8944-592dbc960f12}</Project>
+      <Name>BlitsMeP2PConnection</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BlitsMeServiceHost\BlitsMeServiceHost.csproj">
+      <Project>{3D791A7A-2044-42A0-902A-FC86EDE214D4}</Project>
+      <Name>BlitsMeServiceHost</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BlitsMeServiceProxy\BlitsMeServiceProxy.csproj">
+      <Project>{22BB8667-895C-449A-9DCC-90CB1900F8CB}</Project>
+      <Name>BlitsMeServiceProxy</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WebSocketLib\WebSocket.csproj">
+      <Project>{18413b76-a1fd-450d-989c-30b9f448f966}</Project>
+      <Name>WebSocket</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\icon-main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Entypo-license.txt" />
+    <Content Include="UI\WPF\Images\Search.png" />
+    <Content Include="UI\WPF\Images\Settings.png" />
+    <Content Include="UI\WPF\Images\Time.png" />
+    <Resource Include="UI\WPF\Images\Blitsmewording200.png" />
+    <EmbeddedResource Include="..\BlitsMeCommon\bin\$(Configuration)\BlitsMe.Common.dll" />
+    <EmbeddedResource Include="..\BlitsMeCloudClient\bin\$(Configuration)\BlitsMe.Cloud.dll" />
+    <EmbeddedResource Include="..\BlitsMeP2PConnection\bin\$(Configuration)\BlitsMe.Communication.P2P.dll" />
+    <EmbeddedResource Include="..\BlitsMeServiceHost\bin\$(Configuration)\BlitsMe.ServiceHost.dll" />
+    <EmbeddedResource Include="..\BlitsMeServiceProxy\bin\$(Configuration)\BlitsMe.ServiceProxy.dll" />
+    <EmbeddedResource Include="..\BlitsMeCommon\log4net.dll" />
+    <EmbeddedResource Include="..\WebSocketLib\bin\$(Configuration)\Bauglir.Ex.dll" />
+    <EmbeddedResource Include="..\packages\MahApps.Metro.0.10.1.1\lib\net40\MahApps.Metro.dll" />
+    <EmbeddedResource Include="..\packages\MahApps.Metro.0.10.1.1\lib\net40\System.Windows.Interactivity.dll" />
+    <RootContent Include="env\Release\bmss.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </RootContent>
+    <EmbeddedResource Include="changelog.txt" />
+    <Content Include="icon-main.ico" />
+    <Resource Include="UI\WPF\Images\arrow.png" />
+    <Resource Include="UI\WPF\Images\arrow_limited_blue_bg.png" />
+    <Resource Include="UI\WPF\Images\single chat.png" />
+    <Resource Include="UI\WPF\Images\1337419346_Chat.png" />
+    <Resource Include="UI\WPF\Images\1337419835_05_phonebook.png" />
+    <Resource Include="UI\WPF\Images\1337420206_Char.png" />
+    <Resource Include="UI\WPF\Images\1337424537_System.png" />
+    <Resource Include="UI\WPF\Images\1337424609_Stats.png" />
+    <Resource Include="UI\WPF\Images\1337425212_02.png" />
+    <Resource Include="UI\WPF\Images\Speech Left.png" />
+    <Resource Include="UI\WPF\Images\Speech Bubble Join Me.png" />
+    <Resource Include="UI\WPF\Images\Speech Bubble Join Other.png" />
+    <Resource Include="UI\WPF\Images\Speech Down.png" />
+    <Resource Include="UI\WPF\Images\Speech Up.png" />
+    <Resource Include="UI\WPF\Images\Thought Bubble Left.png" />
+    <Resource Include="UI\WPF\Images\Thought Bubble Right.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  
+  <Target Name="AfterBuild">
+    <Copy DestinationFolder="$(OutputPath)" SourceFiles="@(RootContent)" SkipUnchangedFiles="true" />
+    <Exec Command="&quot;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\Signtool.exe&quot; sign /d &quot;BlitsMe Agent Application&quot; /sha1 83e81a9d1d88fb8718fd1df07e89ef89b000ee64 &quot;$(TargetDir)BlitsMe.Agent.exe&quot;" />
+    <Exec Command="&quot;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\Signtool.exe&quot; sign /d &quot;BlitsMe Support Screen&quot; /sha1 83e81a9d1d88fb8718fd1df07e89ef89b000ee64 &quot;$(TargetDir)bmss.exe&quot;" />
+  </Target>
+  
+  -->
+</Project>

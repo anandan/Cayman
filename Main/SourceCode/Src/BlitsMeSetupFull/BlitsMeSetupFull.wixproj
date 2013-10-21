@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.7</ProductVersion>
+    <ProjectGuid>e356991c-1a8c-4e27-b0d4-4447ca55ba45</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName Condition=" '$(Configuration)' == 'Debug' ">BlitsMeSetupFull_Dev</OutputName>
+    <OutputName Condition=" '$(Configuration)' == 'Release' ">BlitsMeSetupFull</OutputName>
+    <OutputType>Bundle</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <SignOutput>true</SignOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug;env=Debug;upgradeCode=B2EBB906-48C6-4170-A76E-13FD2ADB2BE6;buildMarker=_Dev</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>env=Release;upgradeCode=A42DEC7A-C820-46B7-BB0E-0E507EA13656;buildMarker=</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bundle.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixPSExtension">
+      <HintPath>$(WixExtDir)\WixPSExtension.dll</HintPath>
+      <Name>WixPSExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixBalExtension">
+      <HintPath>$(WixExtDir)\WixBalExtension.dll</HintPath>
+      <Name>WixBalExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="arrow.png" />
+    <Content Include="icon-main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlitsMeSetup\BlitsMeSetup.wixproj">
+      <Name>BlitsMeSetup</Name>
+      <Project>{41b5ab51-8d24-4d3d-9448-6f3584a34c34}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	-->
+  <Target Name="SignBundleEngine">
+    <SignFile CertificateThumbprint="83e81a9d1d88fb8718fd1df07e89ef89b000ee64"
+      SigningTarget="@(SignBundleEngine)"
+ />
+  </Target>
+  <Target Name="SignBundle">
+    <SignFile CertificateThumbprint="83e81a9d1d88fb8718fd1df07e89ef89b000ee64"
+      SigningTarget="@(SignBundle)"
+ />
+    <!-- move the filename to its final name after signing -->
+    <Exec Command="ren &quot;$(TargetPath)&quot; &quot;$(FinalTargetFileName)&quot;" />
+  </Target>
+  <Target Name="BeforeBuild">
+    <GetAssemblyIdentity AssemblyFiles="$(SolutionDir)BlitsMeAgent\bin\$(Configuration)\BlitsMe.Agent.exe">
+      <Output TaskParameter="Assemblies" ItemName="AssemblyVersions" />
+    </GetAssemblyIdentity>
+    <FormatVersion Version="%(AssemblyVersions.Version)" Revision="0">
+      <Output TaskParameter="OutputVersion" PropertyName="RealVersion" />
+    </FormatVersion>
+    <CreateProperty Value="$(OutputName)-$(RealVersion)">
+      <Output TaskParameter="Value" PropertyName="FinalTargetName" />
+    </CreateProperty>
+    <CreateProperty Value="$(FinalTargetName)$(TargetExt)">
+      <Output TaskParameter="Value" PropertyName="FinalTargetFileName" />
+    </CreateProperty>
+    <CreateProperty Value="$(TargetDir)$(FinalTargetFileName)">
+      <Output TaskParameter="Value" PropertyName="FinalTargetPath" />
+    </CreateProperty>
+  </Target>
+  <!--<Target Name="AfterBuild">-->
+    <!--<Exec Command="ren &quot;$(TargetPath)&quot; &quot;$(FinalTargetPath)&quot;" />-->
+    <!-- 
+      <Exec Command="&quot;C:\Program Files\Microsoft SDKs\Windows\v7.0\Bin\Signtool.exe&quot; sign /d &quot;BlitsMe Full Setup EXE&quot; /sha1 83e81a9d1d88fb8718fd1df07e89ef89b000ee64 &quot;$(TargetPath)&quot;" /> 
+    -->
+  <!--</Target>-->
+</Project>

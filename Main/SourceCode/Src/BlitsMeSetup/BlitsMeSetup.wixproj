@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.7</ProductVersion>
+    <ProjectGuid>41b5ab51-8d24-4d3d-9448-6f3584a34c34</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName Condition=" '$(Configuration)' == 'Debug' ">BlitsMeSetup_Dev</OutputName>
+    <OutputName Condition=" '$(Configuration)' == 'Release' ">BlitsMeSetup</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug;env=Debug;upgradeCode=60D58491-8172-4BF9-B2C5-CA405A5EA269;buildMarker=_Dev;VNCServerPort=10231</DefineConstants>
+    <WixVariables>
+    </WixVariables>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WixVariables>
+    </WixVariables>
+    <DefineConstants>env=Release;upgradeCode=53404183-1482-4C07-BBD0-F4F4FB6B3BEF;buildMarker=;VNCServerPort=10230</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlitsMeAgent\BlitsMeAgent.csproj">
+      <Name>BlitsMeAgent</Name>
+      <Project>{211d2399-36e1-4e1e-bfc5-fe76f7a8efcc}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\BlitsMeService\BlitsMeService.csproj">
+      <Name>BlitsMeService</Name>
+      <Project>{90b503c9-7032-4a9c-9d1a-b1187cdb56a8}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\BlitsMeSetupCustomAction\BlitsMeSetupCustomAction.csproj">
+      <Name>BlitsMeSetupCustomAction</Name>
+      <Project>{8266da82-5594-4cea-bf14-413bd5fa95e5}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\BlitsMeUpgradeAgent\BlitsMeUpgradeAgent.csproj">
+      <Name>BlitsMeUpgradeAgent</Name>
+      <Project>{6702e385-f3b9-4b63-b094-70eeb5c6126b}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+
+  <Target Name="AfterBuild">
+    <Exec Condition=" '$(Configuration)' == 'Debug' " Command="&quot;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\Signtool.exe&quot; sign /d &quot;BlitsMe Setup MSI&quot; /sha1 83e81a9d1d88fb8718fd1df07e89ef89b000ee64 &quot;$(TargetDir)BlitsMeSetup_Dev.msi&quot;" />
+    <Exec Condition=" '$(Configuration)' == 'Release' " Command="&quot;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\Signtool.exe&quot; sign /d &quot;BlitsMe Setup MSI&quot; /sha1 83e81a9d1d88fb8718fd1df07e89ef89b000ee64 &quot;$(TargetDir)BlitsMeSetup.msi&quot;" />
+  </Target>
+  	-->
+</Project>
